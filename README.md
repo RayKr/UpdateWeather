@@ -24,3 +24,41 @@
 - [ ] 无需填写`loccation`，自动获取当前位置
 - [ ] NEW UI
 ![Alt text](docs/todo.png)
+
+## macOS上的使用说明
+
+### 依赖安装
+```bash
+pip install -r requirements.txt
+```
+
+### HIDAPI安装
+先从[hidapi](https://github.com/libusb/hidapi/tree/master)clone源码，然后编译安装
+```bash
+# precondition: create a <build dir> somewhere on the filesystem (preferably outside of the HIDAPI source)
+# this is the place where all intermediate/build files are going to be located
+cd <build dir>
+# configure the build
+cmake <HIDAPI source dir>
+# build it!
+cmake --build .
+# install library; by default installs into /usr/local/
+cmake --build . --target install
+# NOTE: you need to run install command as root, to be able to install into /usr/local/
+```
+
+### 配置天气接口key和location
+参照[快速开始](https://github.com/HellSakura/UpdateWeather/wiki/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B)
+
+### 刷新天气
+```bash
+python UpdateWeather.py
+```
+
+### 设置masOS定时任务
+```bash
+# 创建定时任务
+crontab -e
+# 添加定时任务，每30分钟执行一次，记得这里改成自己的真实路径
+*/30 * * * * cd /path/to/UpdateWeather && /path/to/python /path/to/UpdateWeather/UpdateWeather.py
+```
