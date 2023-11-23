@@ -307,15 +307,16 @@ if __name__ == '__main__':
             break
     if path:
         d = hid.Device(path=path)
-    #   d = hid.Device(path=h[2]['path'])
-    d.write(binascii.unhexlify(
-        '01050408011200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'))
-    pack = d.read(1000).decode("utf8", "ignore")
-    print('Zephyr 版本:' + pack[9:16])
-    print('ZMK 版本:' + pack[18:25])
-    print('固件版本:' + pack[27:34])
-    for i in st2:
-        if i == '':
-            continue
-        d.write(binascii.unhexlify(i))
-    print('图片刷新完成')
+        if d:
+            #   d = hid.Device(path=h[2]['path'])
+            d.write(binascii.unhexlify(
+                '01050408011200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'))
+            pack = d.read(1000).decode("utf8", "ignore")
+            print('Zephyr 版本:' + pack[9:16])
+            print('ZMK 版本:' + pack[18:25])
+            print('固件版本:' + pack[27:34])
+            for i in st2:
+                if i == '':
+                    continue
+                d.write(binascii.unhexlify(i))
+            print('图片刷新完成')
