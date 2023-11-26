@@ -467,7 +467,7 @@ else:
 # 加载地名
 
 for data_name3 in data_name2:
-    fnt = ImageFont.truetype(r'1657694032434275.ttf', 8)
+    fnt = ImageFont.truetype(r'fonts/1657694032434275.ttf', 8)
     ImageDraw.Draw(new_image).text((60,data_name_y), data_name3, fill='black', font=fnt)
     data_name_y = data_name_y + name_jiange
 
@@ -553,7 +553,7 @@ else:
         minutely_x = 0
 
     # 设置字体及大小
-    fnt = ImageFont.truetype(r'DinkieBitmapDemo-9px.ttf', 10)
+    fnt = ImageFont.truetype(r'fonts/DinkieBitmapDemo-9px.ttf', 10)
     # 将分钟预报粘贴到新图片上
 
     int_shuzi = 0
