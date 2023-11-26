@@ -1,0 +1,7 @@
+参考 https://github.com/HellSakura/UpdateWeather
+
+config.ini里的location是数字，且勿填错
+
+屏幕底下的轮播图每天切换，支持七张图片，自行改名 Wednesday2.png、Thursday2.png、Saturday2.png、Tuesday2.png、Monday2.png、Sunday2.png、Friday2.png
+
+该exe无弹窗，直接添加进计划任务里即可

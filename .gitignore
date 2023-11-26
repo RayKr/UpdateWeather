@@ -3,3 +3,4 @@ output.png
 /build/
 /venv/
 /.idea/
+.DS_Store
